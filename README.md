@@ -1,10 +1,21 @@
-# news-image-20261118
+# The World in One Day — Wednesday, 18 November 2026
 
 [![make.fun · news-image-20261118](https://make.fun/badge/news-image-20261118.svg)](https://make.fun/bounty/news-image-20261118?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 [![rank](https://make.fun/badge/news-image-20261118/sixtyseconds5/news-image-20261118/rank.svg)](https://make.fun/bounty/news-image-20261118/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 [![reward](https://make.fun/badge/news-image-20261118/sixtyseconds5/news-image-20261118/reward.svg)](https://make.fun/bounty/news-image-20261118?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 
-A program that writes one image summing up Wednesday 18 November 2026's world news: a newspaper-style poster with the day's biggest stories — APEC opening in Shenzhen as Trump tours Asia, Nvidia doubling sales while its board bars Jensen Huang's return, the Gulf on edge after drone scares, Latvia approving a new government, the UN's toll of the wars in Ukraine and Sudan, Cyclone Akvan building over the Bay of Bengal, and Trump on the reported Iran plot — drawn with Pillow and committed as `entry.png`.
+A single-page newspaper poster (1024x1024) summarising the day's news.
+The lead story is the APEC summit opening in Shenzhen as Trump lands in
+China, with a Trump-Xi-Putin meeting due on Thursday. Below it, six
+stories cover Nvidia doubling its sales while its board bars Huang,
+Gulf states on edge after drone scares, Latvia approving a new
+government, the UN's October casualty count for Ukraine and the toll in
+Sudan, Cyclone Akvan nearing India's east coast, and an alleged Iran
+plot that US officials say is being taken very seriously. An ALSO TODAY
+strip along the bottom adds Dhoni's IPL retirement, Amazon's $7bn for
+Indian renewables, India's re-election to the ITU Council, and Trump's
+deposition deadline in the $10bn BBC case. Every illustration is drawn
+from scratch with Pillow shapes — no photographs are used.
 
 ## Run it
 
@@ -12,7 +23,7 @@ A program that writes one image summing up Wednesday 18 November 2026's world ne
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-Redraw the poster from its source (needs Pillow and DejaVu fonts):
+To redraw the poster first:
 
 ```sh
 python3 gen_poster.py
@@ -20,11 +31,9 @@ python3 gen_poster.py
 
 ## Files
 
-- `main.py` — the entrypoint. Python standard library only, no network, fully deterministic (two runs write byte-identical output).
-- `gen_poster.py` — draws `entry.png` from the day's reported news.
-- `entry.png` — the poster: 1024×1024, about 121 KB.
-- `README.md` — this file.
-- `LICENSE` — MIT.
+- `gen_poster.py` — draws the poster and saves `entry.png`
+- `main.py` — copies `entry.png` into `MAKEFUN_OUTPUT_DIR` (default `/output`)
+- `entry.png` — the finished 1024x1024 poster
 
 ---
 
